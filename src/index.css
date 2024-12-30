@@ -1,0 +1,107 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: white;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global styles to remove outlines and add custom focus styles */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+*:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+button:focus, 
+button:focus-visible,
+button:hover {
+  outline: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: white;
+  color: hsl(356, 100%, 66%);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: hsl(355, 100%, 74%);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: 1px solid white;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: hsl(356, 100%, 66%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: inherit;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-base w-full m-0 min-h-screen;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-white hover:text-white/70 transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-white text-light-red px-6 py-2 rounded-full hover:bg-very-light-red hover:text-white transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-light-red transition-colors duration-200;
+  }
+}
